@@ -5,7 +5,7 @@ int myAtoi(string str)
 {
     int i = 0;
     int sign = 1;
-    int sol = 0;
+    long int sol = 0;
     if (str.length() == 0)
         return 0;
 
@@ -24,10 +24,18 @@ int myAtoi(string str)
         }
         sol = sol * 10 + (str[i++] - '0');
     }
-    return sol * sign;
+    sol = sol * sign;
+    if (sol > INT_MAX)
+        return INT_MAX;
+    if (sol < INT_MIN)
+        return INT_MIN;
+    else
+    {
+        return sol;
+    }
 }
 int main()
 {
-    string s = "512 a";
+    string s = "     -512 a";
     cout << myAtoi(s);
 }
