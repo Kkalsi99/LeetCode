@@ -11,12 +11,26 @@ struct ListNode
 ListNode *swapPairs(ListNode *head)
 {
     ListNode *traverse = head;
+    if (traverse == NULL)
+    {
+        return head;
+    }
+    if (traverse->next == NULL)
+    {
+        return head;
+    }
 
-    while (traverse->next != NULL)
+    while (traverse != NULL)
     {
         int val = traverse->val;
-        traverse->val = traverse->next->val;
-        traverse->next->val = val;
+        if (traverse->next != NULL)
+        {
+            traverse->val = traverse->next->val;
+            traverse->next->val = val;
+            traverse = traverse->next->next;
+        }
+        else
+            break;
     }
     return head;
 }

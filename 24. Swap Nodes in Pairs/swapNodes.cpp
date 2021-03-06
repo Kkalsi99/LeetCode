@@ -10,13 +10,8 @@ struct ListNode
 };
 ListNode *swapPairs(ListNode *head)
 {
-    ListNode *first = head;
-    ListNode *second = head->next;
-    while (first != NULL)
-    {
-        first->next = second->next;
-        second->next = first;
-        first = first->next;
-        second = second->next->next->next;
-    }
+    
+}
+int main()
+{
 }
