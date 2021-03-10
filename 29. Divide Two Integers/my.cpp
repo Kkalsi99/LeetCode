@@ -69,4 +69,5 @@ int divide(int dividend, int divisor)
 }
 int main()
 {
+    cout << divide(15, 10);
 }
