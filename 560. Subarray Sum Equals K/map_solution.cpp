@@ -7,7 +7,7 @@ int subarraySum(vector<int> &nums, int k)
     map<int, int> sum_fq;
     int count = 0;
     int sum = 0;
-    sum_fq[0] = 1;
+    sum_fq[0] = 1; //if cumulative sum==k i.e sum-k=0
     for (int i = 0; i < n; i++)
     {
         sum += nums[i];
